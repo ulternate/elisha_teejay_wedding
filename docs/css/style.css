@@ -1,0 +1,23 @@
+.jumbotron {
+  background-color: #F8F3ED;
+  height: 40vh; }
+
+.row {
+  margin-bottom: 100px; }
+
+html, body {
+  background-color: #F8F3ED; }
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+.site-content {
+  flex: 1; }
+
+.vertical-center {
+  display: flex;
+  align-items: center; }
+
+/*# sourceMappingURL=style.css.map */
