@@ -21,6 +21,9 @@
 .row {
   margin-bottom: 100px; }
 
+@media screen and (max-width: 800px) {
+  .btn {
+    width: 100%; } }
 *,
 *::after,
 *::before {
@@ -266,6 +269,9 @@ a {
 html, body {
   background-color: #F8F3ED;
   font-family: "Old Standard TT", serif; }
+
+footer {
+  padding-bottom: 20px; }
 
 .site {
   display: flex;

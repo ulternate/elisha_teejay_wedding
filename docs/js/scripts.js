@@ -1,4 +1,5 @@
-var weddingDateTime = new Date('2019-01-15 12:00:00');
+// The wedding date in a format that is cross platform compatible.
+var weddingDateTime = new Date(2019,0,15,12,00,00);
 
 function counter() {
     var timespan = countdown(
@@ -7,6 +8,22 @@ function counter() {
         countdown.YEARS|countdown.MONTHS|countdown.DAYS);
     $('#countdown').text(timespan.toString());
 };
+
+function isTimelineLinkInViewport(el) {
+    // Is the timeline link in the viewport (i.e. it's visible).
+    var left = el.offset().left;
+
+    var timelineStart = $('#the-timeline a.prev').offset().left;
+    var timelineEnd = $('#the-timeline a.next').offset().left
+
+    var viewportLeft = $(window).scrollLeft() + timelineStart;
+    var viewportRight = viewportLeft + $(window).width() - timelineEnd;
+
+    return (
+        left < viewportRight &&
+        left > viewportLeft
+    );
+}
 
 function activateLatestEventInTimeline() {
     // The time line events as stored in the data-date attributes.
@@ -54,27 +71,47 @@ function activateLatestEventInTimeline() {
     lastDate = timelineEvents[lastDateIndex];
 
     // Click on the event link corresponding to the last event.
-    $('#the-timeline').find('a[data-date="' + lastDate + '"]').click();
+    var currentEventLink = $('#the-timeline').find('a[data-date="' + lastDate + '"]')
+    currentEventLink.click();
+
+    // Toggle the next button until the currentEventLink is visible.
+    if ($('#the-timeline a.prev').is(':visible') && $('#the-timeline a.next').is(':visible')) {
+        var checkVisible = setInterval(function() {
+            if (isTimelineLinkInViewport(currentEventLink)) {
+                // Testing found having to click back once after it's visible.
+                $('#the-timeline a.prev').click();
+                clearInterval(checkVisible);
+            } else {
+                $('#the-timeline a.next').click();
+            }
+        }, 100);
+    }
+}
+
+// Handle the selection of the radio buttons in the form.
+function handle_selection(label) {
+    var attendingEvents = ['wedding', 'celebration_1', 'celebration_2'];
+    var optionName = $(label).prop('for');
+    var radio = $('input[name="' + optionName + '"]');
+    var checked = radio.prop('checked');
+
+    if (!checked) {
+        radio.prop('checked', true);
+        if ($.inArray(optionName, attendingEvents) !== -1) {
+            // De-select the "Not Attending" option.
+            $('input[name="none"]').prop('checked', false);
+        } else {
+            // De-select all of the "I'm attending" options.
+            $.each(attendingEvents, function(index, name) {
+                $('input[name="' + name + '"]').prop('checked', false);
+            });
+        }
+    }
 }
 
 $(document).ready(function() {
     // Countdown to the wedding.
     setInterval(counter, 1000);
-
-    // RSVP form selection events.
-    $('input[type="radio"]').click(function () {
-        var $this = $(this);
-        var button_name = $this.prop('name');
-        var going_values = ['wedding', 'celebration_1', 'celebration_2'];
-        
-        if (button_name === 'none') {
-            $.each(going_values, function(__, name) {
-                $('input[name="' + name + '"]').prop('checked', false);
-            });
-        } else {
-            $('input[name="none"]').prop('checked', false);
-        }
-    });
 
     // Initialise FullPage.JS
     $('#full-page').fullpage({
