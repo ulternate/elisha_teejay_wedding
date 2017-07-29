@@ -48,7 +48,9 @@ function activateLatestEventInTimeline() {
     });
 
     // The next (upcoming date).
-    var nextDate = new Date(Math.min.apply(Math, dates.filter(x => +x > Date.now())));
+    var nextDate = new Date(Math.min.apply(Math, dates.filter(function (x) {
+        return +x > Date.now();
+    })));
 
     // Convert to the format used by date-date attributes.
     var day = nextDate.getDate();
