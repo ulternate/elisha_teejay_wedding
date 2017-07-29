@@ -118,6 +118,7 @@ $(document).ready(function() {
     // Initialise FullPage.JS
     $('#full-page').fullpage({
         navigation: true,
+        showActiveTooltip: true,
         scrollOverflow: true, // Useful for mobiles as the content is bigger than 100vh sometimes.
         scrollOverflowOptions: {
             scrollbars: false
