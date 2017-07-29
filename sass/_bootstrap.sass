@@ -1,6 +1,6 @@
 // Bootstrap overrides.
 .jumbotron-fluid
-    background-image: url('../img/title.JPG') 
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/title.JPG')
     background-size: cover
     background-repeat: no-repeat
     background-position: 50% 50% 
@@ -10,15 +10,26 @@
     margin-right: -15px
     
     h1
+        text-shadow: 3px 3px 0px black
+
+    h4,
+    h5
+        text-shadow: 3px 1px 0px black
+
+    h1
         margin-top: -30vh
         font-family: 'Clicker Script', cursive
         font-size: 15vh
+        font-weight: bold
     h4
         margin-top: 1em
         font-size: 5vh
     h5
         margin-top: 1em
         font-size: 2.5vh
+
+h2
+    font-size: 5vh
 
 .row
     margin-bottom: 100px
