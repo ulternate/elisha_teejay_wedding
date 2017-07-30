@@ -8,6 +8,10 @@ html
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         )
         meta(
+            http-equiv='Cache-Control',
+            content='max-age=2592000'
+        )
+        meta(
             name='description',
             content='Elisha and Teejay are getting married! RSVP and find out ' +
                 'more info regarding the couple and the wedding.'
@@ -32,7 +36,7 @@ html
             rel='stylesheet'
         )
         //- Main Style sheet.
-        link(rel='stylesheet', href='css/style.css')
+        link(rel='stylesheet', href='css/style.min.css')
 
         //- JQuery.
         script(src='https://code.jquery.com/jquery-2.2.4.min.js')
@@ -49,9 +53,9 @@ html
         //- Countdown JS.
         script(src='js/countdown.js')
         //- Time line JS.
-        script(src='js/timeline.js')
+        script(src='js/timeline.min.js')
         //- Main JS.
-        script(src='js/scripts.js')
+        script(src='js/scripts.min.js')
 
 
     body.site
