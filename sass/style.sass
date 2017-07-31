@@ -14,7 +14,6 @@ html, body
     font-family: 'Old Standard TT', serif
 
 footer
-    margin-bottom: 20px
     padding-bottom: 20px
 
 .site
@@ -34,9 +33,14 @@ footer
     vertical-align: middle
     float: none
 
-@media screen and (min-width: 800px)
-    .section
-        margin-bottom: 20vh
+.section:first-of-type
+    padding-top: 0px
+
+.section
+    padding-top: 10vh
+    min-height: 100vh
+
+@media screen and (min-width: 992px)
 
     .hide-on-desktop
         display: none

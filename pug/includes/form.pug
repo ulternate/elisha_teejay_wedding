@@ -21,20 +21,20 @@ div#rsvp.row
             h4 I'm going to...
 
             .form-group
-                label(for='wedding', onclick='handle_selection(this)')
-                    +field_input('radio', 'wedding', 'wedding', '')
+                label(for='wedding', onclick='handle_selection("wedding")')
+                    +field_input('checkbox', 'wedding', 'wedding', '')
                     |  The Wedding (Maui)
                 br
-                label(for='celebration_1', onclick='handle_selection(this)')
-                    +field_input('radio', 'celebration_1', 'celebration_1', '')
+                label(for='celebration_1', onclick='handle_selection("celebration_1")')
+                    +field_input('checkbox', 'celebration_1', 'celebration_1', '')
                     |  Celebration 1.0 (London)
                 br
-                label(for='celebration_2', onclick='handle_selection(this)')
-                    +field_input('radio', 'celebration_2', 'celebration_2', '')
+                label(for='celebration_2', onclick='handle_selection("celebration_2")')
+                    +field_input('checkbox', 'celebration_2', 'celebration_2', '')
                     |  Celebration 2.0 (Perth)
                 br
-                label(for='none', onclick='handle_selection(this)')
-                    +field_input('radio', 'none', 'none', '')
+                label(for='none', onclick='handle_selection("none")')
+                    +field_input('checkbox', 'none', 'none', '')
                     |  None, with regrets
 
             .form-group

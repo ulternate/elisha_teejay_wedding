@@ -90,15 +90,14 @@ function activateLatestEventInTimeline() {
     }
 }
 
-// Handle the selection of the radio buttons in the form.
-function handle_selection(label) {
+// Handle the selection of the labels for the checkboxes buttons in the form.
+function handle_selection(optionName) {
     var attendingEvents = ['wedding', 'celebration_1', 'celebration_2'];
-    var optionName = $(label).prop('for');
-    var radio = $('input[name="' + optionName + '"]');
-    var checked = radio.prop('checked');
+    var checkbox = $('input[name="' + optionName + '"]');
+    var checked = checkbox.prop('checked');
 
     if (!checked) {
-        radio.prop('checked', true);
+        checkbox.prop('checked', true);
         if ($.inArray(optionName, attendingEvents) !== -1) {
             // De-select the "Not Attending" option.
             $('input[name="none"]').prop('checked', false);
@@ -115,16 +114,19 @@ $(document).ready(function() {
     // Countdown to the wedding.
     setInterval(counter, 1000);
 
-    // Initialise FullPage.JS
-    $('#full-page').fullpage({
-        navigation: true,
-        showActiveTooltip: true,
-        scrollOverflow: true, // Useful for mobiles as the content is bigger than 100vh sometimes.
-        scrollOverflowOptions: {
-            scrollbars: false
-        }
-    });
-
     // Set the most recent event in the time line section as active.
     activateLatestEventInTimeline();
+
+    // Handle the checkboxes selections.
+    var $going = $('input[type="checkbox"]').not('[name="none"]')
+    $('input[type="checkbox"][name="none"]').change(function () {
+        if (this.checked) {
+            $going.prop('checked', false)
+        }
+    });
+    $going.change(function () {
+        if (this.checked) {
+            $('input[type="checkbox"][name="none"]').prop('checked', false)
+        }
+    });
 });
