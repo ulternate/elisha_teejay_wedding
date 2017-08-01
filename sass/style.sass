@@ -33,15 +33,14 @@ footer
     vertical-align: middle
     float: none
 
-.section:first-of-type
-    padding-top: 0px
-
 .section
     padding-top: 10vh
     min-height: 100vh
 
-@media screen and (min-width: 992px)
+#timeline
+    background-color: $dark-background
 
+@media screen and (min-width: 992px)
     .hide-on-desktop
         display: none
 
@@ -65,10 +64,22 @@ footer
         .second-image
             z-index: 2
             height: 50vh
+            display: flex
+            align-items: center
         .third-image
             z-index: 3
             height: 50vh
 
-#timeline
-    background-color: $dark-background
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+    // IE 10+ Only styles here.
+    #the-couple
+        .first-image
+            display: inherit
+            img
+                margin-top: auto
+
+        .second-image
+            display: inherit
+            transform: translateY(25%)
+
 
