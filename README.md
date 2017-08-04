@@ -8,12 +8,11 @@ The following libraries or OS code samples were used/extended to make this site.
 
 - Horizontal Timeline: https://codyhouse.co/gem/horizontal-timeline/
 - CountdownJS: http://countdownjs.org/
-- Fullpage.js: https://github.com/alvarotrigo/fullpage.js
 
 ## Languages.
 
 The site is built using the following tools/plugins/languages:
 
-- Pug for HTML templates.
+- Pug for HTML templating.
 - Sass for CSS style-sheets.
 - JQuery + Javascript.
