@@ -1,0 +1,99 @@
+html
+    head
+        title Elisha &amp; Teejay&apos;s Wedding
+
+        meta(charset='UTF-8')
+        meta(
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        )
+
+        //- Google Fonts.
+        link(
+            href='https://fonts.googleapis.com/css?family=Clicker+Script|Old+Standard+TT'
+            rel='stylesheet'
+        )
+
+        //- Bootstrap Style sheet.
+        link(
+            href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+            rel='stylesheet'
+            integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u' 
+            crossorigin='anonymous'
+        )
+        //- Fullpage scrolling CSS.
+        link(
+            href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css',
+            rel='stylesheet'
+        )
+        //- Main Style sheet.
+        link(rel='stylesheet', href='css/style.css')
+
+        //- JQuery.
+        script(src='https://code.jquery.com/jquery-3.2.1.min.js')    
+        //- Bootstrap JS.
+        script(
+            src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' 
+            integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa'
+            crossorigin='anonymous'
+        )
+        //-ScrollOverFlow.
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/vendors/scrolloverflow.min.js')
+        //- Full page scrolling JS.
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.js')
+        //- Countdown JS.
+        script(src='js/countdown.js')
+        //- Time line JS.
+        script(src='js/timeline.js')
+        //- Main JS.
+        script(src='js/scripts.js')
+
+
+    body.site
+        div.site-content#full-page
+            div.container-fluid
+                //- The Jumbotron
+                div.section
+                    div.jumbotron-fluid.vertical-center
+                        div.container.text-center
+                            h1.main-header Elisha &amp; Teejay
+                            h4 are getting married in
+                            h5#countdown
+                
+                //- The couple section.
+                div.section
+                    div.container
+                        h2.text-center The lovely couple (&amp; Hercules)
+
+                        div#the-couple.row
+                            .col-md-4.first-image
+                                img.img-responsive.img-thumbnail(src='img/one.JPG', alt='The Couple image one')
+                            .col-md-4.second-image.vertical-center
+                                img.img-responsive.img-thumbnail(src='img/two.JPG', alt='The Couple image two')
+                            .col-md-4.third-image
+                                img.img-responsive.img-thumbnail(src='img/three.JPG', alt='The Couple image three')
+
+                //- Time line.
+                div.section
+                    div.container
+                        h2.text-center The story so far
+                        include includes/timeline
+
+                //- RSVP Form.
+                div.section
+                    div.container
+                        include includes/form
+                        include includes/footer
+                
+
+
+
+
+
+
+
+
+
+
+
+

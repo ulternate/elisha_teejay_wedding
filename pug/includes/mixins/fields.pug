@@ -1,0 +1,19 @@
+mixin field_input(type, name, value, placeholder)
+    if value!=''
+        input(
+            type=type,
+            value=value,
+            name=name
+        )
+    else
+        input.form-control(
+            type=type,
+            name=name,
+            placeholder=placeholder
+        )
+
+mixin field_textarea(name, placeholder)
+    textarea.form-control(
+        name=name,
+        placeholder=placeholder
+    )

@@ -1,0 +1,50 @@
+include mixins/fields.pug
+
+div#rsvp.row
+    .col-md-6.col-md-offset-3
+        form(
+            method='POST',
+            action='https://formspree.io/etwedding19@gmail.com'
+        )
+            h2 Say you'll be there
+            h5 Please RSVP by January 15th, 2018
+
+            .form-group
+                +field_input('email', 'email', '', 'Email Address')
+
+            .form-group
+                +field_input('text', 'name', '', 'Your Name')
+
+            .form-group
+                +field_input('text', 'quest', '', 'Your Guest\'s Name')
+
+            h4 I'm going to...
+
+            .form-group
+                label
+                    +field_input('radio', 'wedding', 'wedding', '') 
+                    |  The Wedding (Maui)
+                br
+                label
+                    +field_input('radio', 'celebration_1', 'celebration_1', '')
+                    |  Celebration 1.0 (London)
+                br
+                label
+                    +field_input('radio', 'celebration_2', 'celebration_2', '')
+                    |  Celebration 2.0 (Perth)
+                br
+                label
+                    +field_input('radio', 'none', 'none', '')
+                    |  None, with regrets
+
+            .form-group
+                +field_input('text', 'diet', '', 'Dietary Requirements')
+
+            .form-group
+                +field_input('text', 'song', '', 'Favourite Song')
+
+            .form-group
+                +field_textarea('message', 'Your message')
+
+            .form-group
+                button.btn.btn-primary(type='submit') Send

@@ -1,0 +1,10 @@
+mixin timeline_event(date, text, selected)
+    li
+        a(class!=attributes.class, href='#0', data-date=date)= text
+
+mixin timeline_event_content(date, title, subtitle)
+    li(class!=attributes.class, data-date=date)
+        h2= title
+        em= subtitle
+        if block
+            block

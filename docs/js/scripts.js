@@ -1,66 +1,90 @@
-moment().format();
+var weddingDateTime = new Date('2019-01-15 12:00:00');
 
-function pluralisePeriod(value, string) {
-    // Append 's' to the string and number pair if it's greater than 1.
-    // i.e. return '1 month' or '2 months'.
-    var returnString = value + ' ' + string;
+function counter() {
+    var timespan = countdown(
+        null,
+        weddingDateTime,
+        countdown.YEARS|countdown.MONTHS|countdown.DAYS);
+    $('#countdown').text(timespan.toString());
+};
 
-    if (value > 1) {
-        return returnString + 's';
-    } 
+function activateLatestEventInTimeline() {
+    // The time line events as stored in the data-date attributes.
+    var timelineEvents = [
+        '22/06/1989',
+        '21/07/1991',
+        '01/08/2007',
+        '01/04/2010',
+        '15/01/2011',
+        '16/11/2014',
+        '23/02/2017',
+        '03/12/2017',
+        '15/01/2019',
+        '19/01/2019',
+        '02/02/2019'
+    ]
 
-    return returnString;
-}
+    // Get the events as date objects.
+    var dates = timelineEvents.map(function (d) {
+        var parts = d.split('/');
+        return new Date(parts[2], parts[1] - 1, parts[0]);
+    });
 
-function countdown() {
-    var currentDateTime = new Date().getTime();
-    var weddingDateTime = new Date('2019-01-15 12:00:00').getTime();
+    // The next (upcoming date).
+    var nextDate = new Date(Math.min.apply(Math, dates.filter(x => +x > Date.now())));
 
-    var diffTime = weddingDateTime - currentDateTime;
-    var duration = moment.duration(diffTime, 'milliseconds');
+    // Convert to the format used by date-date attributes.
+    var day = nextDate.getDate();
+    var month = nextDate.getMonth() + 1;
+    var year = nextDate.getFullYear();
 
-    var years = duration.years();
-    var months = duration.months();
-    var days = duration.days();
-    var hours = duration.hours();
-    var minutes = duration.minutes();
-    var seconds = duration.seconds();
-
-    // Combine for the counter.
-    var counter = 'in';
-
-    if (years > 0) {
-        counter += ' ' + pluralisePeriod(years, 'year');
+    if (day < 10) {
+        day = '0' + day;
     }
 
-    if (months > 0) {
-        counter += ' ' + pluralisePeriod(months, 'month');
+    if (month < 10) {
+        month = '0' + month;
     }
 
-    if (days > 0) {
-        counter += ' ' + pluralisePeriod(days, 'day');
-    }
+    nextDate = day + '/' + month + '/' + year;
 
-    if (hours > 0) {
-        hours += ' ' + pluralisePeriod(hours, 'hour');
-    }
+    // Get the index of the last active event (i.e. last event that has happened) and activate that link with that data-event.
+    // This event will be the one before the next date.
+    lastDateIndex = timelineEvents.indexOf(nextDate) - 1;
+    lastDate = timelineEvents[lastDateIndex];
 
-    if (minutes > 0) {
-        counter += ' ' + pluralisePeriod(minutes, 'minute');
-    }
-
-    if (seconds > 0) {
-        counter += ' ' + pluralisePeriod(seconds, 'second');
-    }
-
-    if (diffTime < 0) {
-        counter = ''
-    }
-
-    // Display on the site.
-    $('#countdown').text(counter);
+    // Click on the event link corresponding to the last event.
+    $('#the-timeline').find('a[data-date="' + lastDate + '"]').click();
 }
 
 $(document).ready(function() {
-    setInterval(countdown, 1000);
+    // Countdown to the wedding.
+    setInterval(counter, 1000);
+
+    // RSVP form selection events.
+    $('input[type="radio"]').click(function () {
+        var $this = $(this);
+        var button_name = $this.prop('name');
+        var going_values = ['wedding', 'celebration_1', 'celebration_2'];
+        
+        if (button_name === 'none') {
+            $.each(going_values, function(__, name) {
+                $('input[name="' + name + '"]').prop('checked', false);
+            });
+        } else {
+            $('input[name="none"]').prop('checked', false);
+        }
+    });
+
+    // Initialise FullPage.JS
+    $('#full-page').fullpage({
+        navigation: true,
+        scrollOverflow: true, // Useful for mobiles as the content is bigger than 100vh sometimes.
+        scrollOverflowOptions: {
+            scrollbars: false
+        }
+    });
+
+    // Set the most recent event in the time line section as active.
+    activateLatestEventInTimeline();
 });

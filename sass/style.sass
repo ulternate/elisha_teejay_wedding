@@ -1,14 +1,17 @@
 // Colours.
 $primary-background: #F8F3ED
+$dark-background: #0D0C08
 $off-white: #FFFFFF
 $dark-grey: #0F1411
 
 // Imports.
 @import mixins
 @import bootstrap
+@import timeline
 
 html, body
     background-color: $primary-background
+    font-family: 'Old Standard TT', serif
 
 .site
     display: flex
@@ -21,3 +24,43 @@ html, body
 .vertical-center
     display: flex
     align-items: center
+
+.vertical-center-no-flex
+    display: inline-block
+    vertical-align: middle
+    float: none
+
+@media screen and (min-width: 800px)
+    .section
+        margin-bottom: 20vh
+
+    .hide-on-desktop
+        display: none
+
+    #the-couple
+        .col-md-4
+            padding-left: 5px
+            padding-right: 5px
+            &:nth-of-type(1)
+                margin-left: 50px
+            &:nth-of-type(2)
+                margin-left: -50px
+            &:nth-of-type(3)
+                margin-left: -50px
+        .first-image
+            z-index: 1
+            height: 50vh
+            display: flex
+            flex-direction: column
+            img
+                margin-top: auto
+        .second-image
+            z-index: 2
+            height: 50vh
+        .third-image
+            z-index: 3
+            height: 50vh
+
+#timeline
+    background-color: $dark-background
+
