@@ -1,0 +1,12 @@
+mixin wedding_info(title, date, location, dress_code, time, details)
+    h2= title
+    h4
+        em= date
+    h4="Location: " + location
+    h4="Dress Code: " + dress_code
+    if time != ''
+        h4="Time: " + time
+    if details != ''
+        h4="Details: " + details
+    if block
+        block

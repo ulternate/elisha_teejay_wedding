@@ -19,7 +19,7 @@ html
 
         //- Google Fonts.
         link(
-            href='https://fonts.googleapis.com/css?family=Clicker+Script|Old+Standard+TT'
+            href='https://fonts.googleapis.com/css?family=Old+Standard+TT'
             rel='stylesheet'
         )
 
@@ -54,7 +54,7 @@ html
             //- The Jumbotron
             div.jumbotron-fluid.vertical-center
                 div.container.text-center
-                    h1.main-header Elisha &amp; Teejay
+                    h1.main-header ELISHA &amp; TEEJAY
                     h4 are getting married in
                     h5#countdown
                 
@@ -74,8 +74,14 @@ html
 
                 //- Time line.
                 div.section
-                    h2.text-center The story so far
+                    h2.text-center The time(line) of our lives
+                    h4.text-center
+                        | 
+                        i click through for our story so far
                     include includes/timeline
+
+                div.section
+                    include includes/wedding.pug
 
                 //- RSVP Form.
                 div.section#form

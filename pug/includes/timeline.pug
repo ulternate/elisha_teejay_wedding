@@ -8,15 +8,14 @@ section.cd-horizontal-timeline#the-timeline
                 ol
                     +timeline_event('22/06/1989', 'Jun 89')(class='selected')
                     +timeline_event('21/07/1991', 'Jul 91')
-                    +timeline_event('01/08/2007', 'Aug 07')
+                    +timeline_event('23/10/2007', 'Oct 07')
                     +timeline_event('01/04/2010', 'Apr 10')
                     +timeline_event('15/01/2011', 'Jan 11')
                     +timeline_event('16/11/2014', 'Nov 14')
+                    +timeline_event('04/01/2016', 'Jan 16')
                     +timeline_event('23/02/2017', 'Feb 17')
                     +timeline_event('03/12/2017', 'Dec 17')
-                    +timeline_event('15/01/2019', 'Jan 15')
-                    +timeline_event('19/01/2019', 'Jan 19')
-                    +timeline_event('02/02/2019', 'Feb 19')
+                    +timeline_event('15/01/2019', '2019')
                 
                 span.filling-line(aria-hidden='true')
 
@@ -28,92 +27,65 @@ section.cd-horizontal-timeline#the-timeline
 
     .events-content
         ol
-            +timeline_event_content('22/06/1989', 'Teejay is born', 'June 22nd, 1989')(class='selected')
-                p Teejay is born on this day in London, England.
-            +timeline_event_content('21/07/1991', 'Elisha is born', 'July 21st, 1991')
-                p Elisha is born on this day in Perth, Australia.
-            +timeline_event_content('01/08/2007', 'Teejay arrived in Australia', 'August, 2007')
-                p Teejay and his family arrived in Australia.
+            +timeline_event_content('22/06/1989', 'Teejay is born', '22 June 1989')(class='selected')
+                p Teejay is born in London, England.
+
+            +timeline_event_content('21/07/1991', 'Elisha is born', '21 July 1991')
+                div.row
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        p Elisha is born in Perth, Australia.
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        img.img-responsive(src='img/Jul 91.JPG', alt='Elisha July 1991')
+
+            +timeline_event_content('23/10/2007', 'Teejay arrived in Australia', '23 October 2007')
+                div.row
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        p Teejay and his family arrived in Australia.
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        img.img-responsive(src='img/Oct 07.JPG', alt='Teejay and Elisha 2007')
+
             +timeline_event_content('01/04/2010', 'First met', 'April, 2010')
-                p Elisha and Teejay first met.
-            +timeline_event_content('15/01/2011', 'First Date', 'January 15th, 2011')
-                p Elisha and Teejay went on their first date.
-            +timeline_event_content('16/11/2014', 'Moved in together', 'November 16th, 2014')
-                p Elisha and Teejay moved into their first home together.
-            +timeline_event_content('23/02/2017', 'Proposal', 'February 23rd, 2017')
-                p Teejay proposed in France at Euro Disneyland.
-            +timeline_event_content('03/12/2017', 'Baby due', 'December 3rd, 2017')
-                p Their first child is due.
-            +timeline_event_content('15/01/2019', 'Wedding', 'Tuesday, January 15th, 2019')
                 div.row
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        p
-                            b Location: 
-                            | Maui, Hawaii
-                        p 
-                            b Time: 
-                            | TBD
-                        p 
-                            b Details: 
-                            | Further details to be provided soon &#x1F601;
-
+                        p Elisha and Teejay first met through mutual friends at Burswood Casino, Perth.
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        iframe(
-                            width='100%',
-                            height='300',
-                            frameborder='0'
-                            style='border:0',
-                            src='https://www.google.com/maps/embed/v1/view?zoom=9&center=20.7984%2C-156.3319&key=AIzaSyACM0kttcdeBCHvxzJwfS6Rs7LoGknuANc',
-                            allowfullscreen
-                        )
-            +timeline_event_content('19/01/2019', 'Celebration 1.0', 'Saturday, January 19th, 2019')
+                        img.img-responsive(src='img/April 10.JPG', alt='Elisha and Teejay 2010')
+
+            +timeline_event_content('15/01/2011', 'First Date', '15 January 2011')
                 div.row
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        p
-                            b Location: 
-                            | TBD (London)
-                        p 
-                            b Time: 
-                            | 7pm until late
-                        p 
-                            b Details: 
-                            | Further details to be provided soon &#x1F601;
-
+                        p Elisha and Teejay went on their first date at Scarborough Beach, Perth.
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        iframe(
-                            width='100%',
-                            height='300',
-                            frameborder='0'
-                            style='border:0',
-                            src='https://www.google.com/maps/embed/v1/view?zoom=9&center=51.8098%2C-0.2377&key=AIzaSyACM0kttcdeBCHvxzJwfS6Rs7LoGknuANc',
-                            allowfullscreen
-                        )
+                        img.img-responsive(src='img/Jan 11.JPG', alt='Teejay and Elisha at Scarborough Beach 2011')
 
-            +timeline_event_content('02/02/2019', 'Celebration 2.0', 'Saturday, February 2nd, 2019')
+            +timeline_event_content('16/11/2014', 'Moved in together', '16 November 2014')
                 div.row
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        p
-                            b Location: 
-                            | Ocean Reef, Perth, Australia
-                        p 
-                            b Time: 
-                            | 7pm until late
-                        p 
-                            b Details: 
-                            | Please join us to celebrate the wedding. 
-                            br
-                            br      
-                            | Gives us a chance to share our experience in Hawaii with pictures and stories with our friends and family who weren't able to join us (and those that could &#x1F601; ). 
-                            br
-                            br
-                            | Food, drinks and entertainment will be provided.
-
+                        p Elisha and Teejay moved into their first home together.
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        iframe(
-                            width='100%',
-                            height='300',
-                            frameborder='0'
-                            style='border:0',
-                            src='https://www.google.com/maps/embed/v1/view?zoom=13&center=-31.7520%2C115.7350&key=AIzaSyACM0kttcdeBCHvxzJwfS6Rs7LoGknuANc',
-                            allowfullscreen
-                        )
+                        img.img-responsive(src='img/Nov 14.JPG', alt='Teejay and Elisha at their new home 2014')
+
+            +timeline_event_content('04/01/2016', 'Hercules joins the fun', '4 January 2016')
+                div.row
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        p Hercules joined the family.
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        img.img-responsive(src='img/Jan 16.JPG', alt='Teejay, Hercules and Elisha 2016')
+
+            +timeline_event_content('23/02/2017', 'Proposal', '23 February 2017')
+                div.row
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        p Teejay proposed to Elisha in Paris at Euro Disneyland.
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        img.img-responsive(src='img/Feb 17.JPG', alt='Teejay and Elisha after Teejay proposed 2017')
+
+            +timeline_event_content('03/12/2017', 'Baby due', '3 December 2017')
+                div.row
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        p Baby Driver is due.
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        img.img-responsive(src='img/Dec 17.JPG', alt='Teejay and Elisha pregnancy photo 2017')
+
+            +timeline_event_content('15/01/2019', 'Wedding', 'January - February 2019')
+                p Elisha and Teejay are getting married January 2019.
+                p All the details for the wedding ceremony and celebrations can be found below.

@@ -1,13 +1,13 @@
 include mixins/fields.pug
 
 div#rsvp.row
-    .col-md-6.col-md-offset-3
+    .col-md-8.col-md-offset-2
         form(
             method='POST',
             action='https://formspree.io/etwedding19@gmail.com'
         )
             h2 Say you'll be there
-            h5 Please RSVP by January 15th, 2018
+            h5 Please RSVP by no later than 28 February 2018 to help us prepare our events
 
             .form-group
                 +field_input('email', 'email', '', 'Email Address')
@@ -23,7 +23,7 @@ div#rsvp.row
             .form-group
                 label(for='wedding', onclick='handle_selection("wedding")')
                     +field_input('checkbox', 'wedding', 'wedding', '')
-                    |  The Wedding (Maui)
+                    |  The Wedding (Hawaii)
                 br
                 label(for='celebration_1', onclick='handle_selection("celebration_1")')
                     +field_input('checkbox', 'celebration_1', 'celebration_1', '')
