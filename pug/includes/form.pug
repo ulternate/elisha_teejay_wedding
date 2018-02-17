@@ -26,12 +26,12 @@ div#rsvp.row
                     |  The Wedding (Hawaii)
                 br
                 label(for='celebration_1', onclick='handle_selection("celebration_1")')
-                    +field_input('checkbox', 'celebration_1', 'celebration_1', '')
-                    |  Celebration 1.0 (London)
+                    +field_input('checkbox', 'celebration_1', 'London', '')
+                    |  London (Celebration 1.0)
                 br
                 label(for='celebration_2', onclick='handle_selection("celebration_2")')
-                    +field_input('checkbox', 'celebration_2', 'celebration_2', '')
-                    |  Celebration 2.0 (Perth)
+                    +field_input('checkbox', 'celebration_2', 'Perth', '')
+                    |  Perth (Celebration 2.0)
                 br
                 label(for='none', onclick='handle_selection("none")')
                     +field_input('checkbox', 'none', 'none', '')
@@ -41,7 +41,7 @@ div#rsvp.row
                 +field_input('text', 'diet', '', 'Dietary Requirements')
 
             .form-group
-                +field_input('text', 'song', '', 'Favourite Song')
+                +field_input('text', 'favourite_song_to_dance_to', '', 'Favourite Song to Dance to')
 
             .form-group
                 +field_textarea('message', 'Your message')

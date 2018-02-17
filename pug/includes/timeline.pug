@@ -14,7 +14,7 @@ section.cd-horizontal-timeline#the-timeline
                     +timeline_event('16/11/2014', 'Nov 14')
                     +timeline_event('04/01/2016', 'Jan 16')
                     +timeline_event('23/02/2017', 'Feb 17')
-                    +timeline_event('03/12/2017', 'Dec 17')
+                    +timeline_event('06/12/2017', 'Dec 17')
                     +timeline_event('15/01/2019', '2019')
                 
                 span.filling-line(aria-hidden='true')
@@ -28,7 +28,11 @@ section.cd-horizontal-timeline#the-timeline
     .events-content
         ol
             +timeline_event_content('22/06/1989', 'Teejay is born', '22 June 1989')(class='selected')
-                p Teejay is born in London, England.
+                div.row
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        p Teejay is born in London, England.
+                    .col-md-6.col-sm-12.vertical-center-no-flex
+                        img.img-responsive(src='img/Jun-89.jpg', alt='Teejay Jun 1989')
 
             +timeline_event_content('21/07/1991', 'Elisha is born', '21 July 1991')
                 div.row
@@ -79,10 +83,10 @@ section.cd-horizontal-timeline#the-timeline
                     .col-md-6.col-sm-12.vertical-center-no-flex
                         img.img-responsive(src='img/Feb-17.JPG', alt='Teejay and Elisha after Teejay proposed 2017')
 
-            +timeline_event_content('03/12/2017', 'Baby due', '3 December 2017')
+            +timeline_event_content('06/12/2017', 'First child was born', '6 December 2017')
                 div.row
                     .col-md-6.col-sm-12.vertical-center-no-flex
-                        p Baby Driver is due.
+                        p Sahara Rose was born.
                     .col-md-6.col-sm-12.vertical-center-no-flex
                         img.img-responsive(src='img/Dec-17.JPG', alt='Teejay and Elisha pregnancy photo 2017')
 
