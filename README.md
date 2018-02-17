@@ -15,6 +15,7 @@ The site is built using the following tools/plugins/languages:
 
 - Pug for HTML templating.
 - Sass for CSS style-sheets.
+- Minifier for JS minification.
 - JQuery + Javascript.
 
 ## Building site.
@@ -41,3 +42,11 @@ sass --watch sass/style.sass:docs/css/style.min.css --style compressed
 ```
 
 Using the above command, the output will be compressed.
+
+##### Javascript.
+
+```bash
+minify docs/js
+```
+
+Using the above command, all JavaScript files in the directory will be minified.
