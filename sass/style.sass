@@ -44,6 +44,14 @@ footer
 #timeline
     background-color: $dark-background
 
+#the-couple
+    .first-image
+        img
+            display: block
+            margin-left: auto
+            margin-right: auto
+            max-height: 90vh
+
 @media screen and (min-width: 992px)
     .hide-on-desktop
         display: none
@@ -63,20 +71,10 @@ footer
             &:nth-of-type(3)
                 margin-left: -50px
         .first-image
-            z-index: 1
-            height: 50vh
             display: flex
             flex-direction: column
             img
                 margin-top: auto
-        .second-image
-            z-index: 2
-            height: 50vh
-            display: flex
-            align-items: center
-        .third-image
-            z-index: 3
-            height: 50vh
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
     // IE 10+ Only styles here.
@@ -85,9 +83,3 @@ footer
             display: inherit
             img
                 margin-top: auto
-
-        .second-image
-            display: inherit
-            transform: translateY(25%)
-
-
